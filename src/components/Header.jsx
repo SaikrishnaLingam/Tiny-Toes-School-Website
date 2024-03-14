@@ -43,7 +43,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className="flex flex-row w-full justify-between items-center py-4 px-8 lg:px-12">
+            <nav className="flex flex-row w-full justify-between items-center py-4 px-8 lg:px-12 bg-slate-100">
                 <Logo />
                 <div className="lg:hidden">
                     <button onClick={toggleNavbar}>
