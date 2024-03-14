@@ -1,6 +1,6 @@
 import React from 'react'
 import celebrating from '../assests/imgs/14yrs.png'
-import brushstrokegirl from '../assests/imgs/brushstroke-girl.png'
+import ImageCarousel from './SliderHomePage/ImageCarousel'
 
 const HomeSlider = () => {
     return (
@@ -21,7 +21,8 @@ const HomeSlider = () => {
                 </button>
             </div>
             <div className='flex items-center justify-center col-span-1'>
-                <img src={brushstrokegirl} alt="Brushstroke Girl" className='h-[89%] w-auto'/>
+                {/* <img src={brushstrokegirl} alt="Brushstroke Girl" className='h-[89%] w-auto'/> */}
+                <ImageCarousel />
             </div>
         </div>
     )

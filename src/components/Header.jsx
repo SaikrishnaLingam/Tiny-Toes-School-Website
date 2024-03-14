@@ -6,8 +6,8 @@ import { Menu, X } from 'lucide-react';
 
 const Logo = () => {
     return (
-        <div className="w-100px lg:w-1/4">
-            <img src={logo} alt="Tiny Toes Logo" />
+        <div className="w-24 md:w-32 lg:w-48 xl:w-64">
+            <img src={logo} alt="Tiny Toes Logo" className="w-full h-auto" />
         </div>
     );
 };
@@ -69,7 +69,7 @@ const NavBar = () => {
 
 const Header = () => {
     return (
-        <header className="top-0 z-[20] mx-auto flex-wrap w-full items-center justify-between px-8 lg:px-32">
+        <header className="top-0 z-[20] flex-wrap w-full items-center justify-between ">
             <NavBar />
         </header>
     );

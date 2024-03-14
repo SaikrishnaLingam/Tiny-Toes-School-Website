@@ -4,10 +4,14 @@ import { Outlet } from "react-router-dom";
 import HomeSlider from "./components/HomeSlider";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
-    const [privacyPolicy, setPrivacyPolicy] = useState(true)
-
+    const [privacyPolicy, setPrivacyPolicy] = useState(false)
+    const togglePrivacyPolicy = () => {
+        setPrivacyPolicy(!privacyPolicy)
+    }
+    
     return (
         <>
         <Header />
@@ -17,6 +21,7 @@ function App() {
                     <Outlet />
                     <HomeSlider />
                     {/* toggle privacy policy in footer */}
+                    <Footer />
                 </>
             )}
 
