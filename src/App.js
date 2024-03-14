@@ -6,6 +6,7 @@ import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import { useState } from "react";
 import Footer from "./components/Footer";
 import Principal from "./components/Principal";
+import AdmissionAd from "./components/AdmissionAd";
 
 function App() {
     const [privacyPolicy, setPrivacyPolicy] = useState(false)
@@ -21,6 +22,7 @@ function App() {
                     <Outlet />
                     <HomeSlider />
                     <Principal />
+                    <AdmissionAd />
                     {/* toggle privacy policy in footer */}
                     {/* set up routes and links in footer */}
                     <Footer setPrivacyPolicy={setPrivacyPolicy}/>
