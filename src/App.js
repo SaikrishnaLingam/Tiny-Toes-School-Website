@@ -7,6 +7,7 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import Principal from "./components/Principal";
 import AdmissionAd from "./components/AdmissionAd";
+import UnleashPotential from "./components/UnleashPotential";
 
 function App() {
     const [privacyPolicy, setPrivacyPolicy] = useState(false)
@@ -19,13 +20,20 @@ function App() {
         <Header />
             {!privacyPolicy && (
                 <>
-                    <Outlet />
+                <Outlet />
                     <HomeSlider />
                     <Principal />
+                    {/* Cards */}
                     <AdmissionAd />
+                    {/* Embrace Learning section */}
+                    <UnleashPotential />
+                    {/* Educate for children */}
+                    {/* Parent Corner Slider */}
+                    {/* Knowledge Sharing Corner - blog */}
+                    {/* Gallery */}
+                    <Footer setPrivacyPolicy={setPrivacyPolicy}/>
                     {/* toggle privacy policy in footer */}
                     {/* set up routes and links in footer */}
-                    <Footer setPrivacyPolicy={setPrivacyPolicy}/>
                 </>
             )}
 
