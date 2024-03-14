@@ -1,16 +1,12 @@
 import React from 'react';
-import logo from '../assests/imgs/logo.png';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-
-const Logo = () => {
-    return (
-        <div className="w-24 md:w-32 lg:w-48 xl:w-64">
-            <img src={logo} alt="Tiny Toes Logo" className="w-full h-auto" />
-        </div>
-    );
-};
+import { Contact, Menu, X } from 'lucide-react';
+import Logo from './Logo';
+import AboutUs from './pages/AboutUs';
+import OurCurriculum from './pages/OurCurriculum';
+import Gallery from './pages/Gallery';
+import ContactUs from './pages/ContactUs';
 
 const NavBarItems = () => {
     return (
@@ -19,16 +15,16 @@ const NavBarItems = () => {
                 Home
             </NavLink>
             <NavLink to="/about-us" className="nav-link">
-                About Us
+                <AboutUs />
             </NavLink>
             <NavLink to="/our-curriculum" className="nav-link">
-                Our Curriculum
+                <OurCurriculum />
             </NavLink>
             <NavLink to="/gallery" className="nav-link">
-                Gallery
+                <Gallery />
             </NavLink>
             <NavLink to="/contact-us" className="nav-link">
-                Contact Us
+                <ContactUs />
             </NavLink>
         </div>
     );
@@ -57,12 +53,12 @@ const NavBar = () => {
             </nav>
 
             {isOpen && (
-    <div className="lg:hidden">
-        <div className="flex items-center justify-center top-0 left-0 w-full bg-pink-100">
-            <NavBarItems />
-        </div>
-    </div>
-)}
+                <div className="lg:hidden">
+                    <div className="flex items-center justify-center top-0 left-0 w-full bg-pink-100">
+                        <NavBarItems />
+                    </div>
+                </div>
+            )}
         </>
     );
 };

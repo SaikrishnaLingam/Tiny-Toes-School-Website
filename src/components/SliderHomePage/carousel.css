@@ -46,7 +46,7 @@
 .dots {
     display: flex;
     margin: 1rem 0;
-    margin-left: 200px; /* Adjust the margin-left value as needed */
+    /* margin-left: 200px; Adjust the margin-left value as needed */
 }
 
 .dot {

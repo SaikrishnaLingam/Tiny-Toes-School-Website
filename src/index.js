@@ -4,14 +4,27 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import App from './App';
+import Logo from './components/Logo';
+import AboutUs from './components/pages/AboutUs';
+import ContactUs from './components/pages/ContactUs';
+import OurCurriculum from './components/pages/OurCurriculum';
+import RegistrationCorner from './components/pages/RegistrationCorner';
+import KnowledgeArea from './components/pages/KnowledgeArea';
+import Gallery from './components/pages/Gallery';
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
 
+// Need to add routes
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<App />}>
-            {/* <Route path='' element={<Home />}/>
-            <Route path='/about' element={<About />}/>
+            {/* <Route path='' element={<Logo />}/> */}
+            <Route path='/about-us' element={<AboutUs />}/>
             <Route path='/contact-us' element={<ContactUs />}/>
-            <Route path='user/(:userId)' element={<User />}/> */}
+            <Route path='/our-curriculum' element={<OurCurriculum />}/>
+            <Route path='/registration-corner' element={<RegistrationCorner />}/>
+            <Route path='/knowledge-area' element={<KnowledgeArea />}/>
+            <Route path='/gallery' element={<Gallery />}/>
+            <Route path='/privacy-policy' element={<PrivacyPolicy />}/>
         </Route>
     )
 )
