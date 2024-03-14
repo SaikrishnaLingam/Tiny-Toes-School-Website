@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Principal from "./components/Principal";
 import AdmissionAd from "./components/AdmissionAd";
 import UnleashPotential from "./components/UnleashPotential";
+import HomeGallery from './components/HomeGallery';
 
 function App() {
     const [privacyPolicy, setPrivacyPolicy] = useState(false)
@@ -21,6 +22,7 @@ function App() {
             {!privacyPolicy && (
                 <>
                 <Outlet />
+                {/* make buttons functinal */}
                     <HomeSlider />
                     <Principal />
                     {/* Cards */}
@@ -30,10 +32,12 @@ function App() {
                     {/* Educate for children */}
                     {/* Parent Corner Slider */}
                     {/* Knowledge Sharing Corner - blog */}
-                    {/* Gallery */}
+                    <HomeGallery /> 
+                        {/* Route this View More button in Home Gallery to the Gallery Component in the Pages folder */}
                     <Footer setPrivacyPolicy={setPrivacyPolicy}/>
                     {/* toggle privacy policy in footer */}
                     {/* set up routes and links in footer */}
+                    {/* make footer responsive */}
                 </>
             )}
 
