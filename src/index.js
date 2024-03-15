@@ -12,12 +12,14 @@ import RegistrationCorner from './components/pages/RegistrationCorner';
 import KnowledgeArea from './components/pages/KnowledgeArea';
 import Gallery from './components/pages/Gallery';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
+import Layout from './Layout';
 
 // Need to add routes
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<App />}>
             {/* <Route path='' element={<Logo />}/> */}
+            <Route path='' element={<Layout />}/>
             <Route path='/about-us' element={<AboutUs />}/>
             <Route path='/contact-us' element={<ContactUs />}/>
             <Route path='/our-curriculum' element={<OurCurriculum />}/>

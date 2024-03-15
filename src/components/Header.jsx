@@ -3,10 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { Contact, Menu, X } from 'lucide-react';
 import Logo from './Logo';
-import AboutUs from './pages/AboutUs';
-import OurCurriculum from './pages/OurCurriculum';
-import Gallery from './pages/Gallery';
-import ContactUs from './pages/ContactUs';
 
 const NavBarItems = () => {
     return (
@@ -15,16 +11,16 @@ const NavBarItems = () => {
                 Home
             </NavLink>
             <NavLink to="/about-us" className="nav-link">
-                <AboutUs />
+                About Us
             </NavLink>
             <NavLink to="/our-curriculum" className="nav-link">
-                <OurCurriculum />
+                Our Curriculum
             </NavLink>
             <NavLink to="/gallery" className="nav-link">
-                <Gallery />
+                Gallery
             </NavLink>
             <NavLink to="/contact-us" className="nav-link">
-                <ContactUs />
+                Contact Us
             </NavLink>
         </div>
     );
