@@ -10,7 +10,7 @@ import AdmissionAd from "./components/AdmissionAd";
 import UnleashPotential from "./components/UnleashPotential";
 import HomeGallery from './components/HomeGallery';
 import KnowldegeCorner from "./components/KnowldegeCorner";
-import Testimonial from "./components/Testimonial";
+import Testimonial from "./components/Testimonials/Testimonial.jsx";
 
 function App() {
     const [privacyPolicy, setPrivacyPolicy] = useState(false)

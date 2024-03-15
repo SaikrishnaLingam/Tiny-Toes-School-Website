@@ -18,7 +18,7 @@ const Principal = () => {
                     <h2 className='text-lg md:text-xl pb-4'>Principal, TinyToes Playschool</h2>
                     <img src={principalImg} alt="Principal" className='md:hidden block p-10'/>
                     <p className='pt-4 xl:mr-48 xl:pr-32 text-md p-4 md:p-0 lg:text-lg  '>For 14 years, TinyToes Play School has been a nurturing haven for tiny stars, prioritizing safety, holistic learning, and lifelong skills. Our journey emphasizes a secure, joyful environment where children flourish. Rigorous safety measures ensure a protected space for exploration and growth. Our dynamic curriculum fosters curiosity and a love for learning, while life skills and personality development are integral parts of education. With a warm, homely atmosphere and disciplined teachers, we foster a sense of community and excellence. Join us at TinyToes, where every child's journey is celebrated, and each tiny star shines brightly with promise and potential.</p>
-                    <button className='flex rounded-xl bg-yellow-300 my-3 p-3 lg:my-6 lg:p-6 items-center justify-center text-sm lg:text-2xl md:text-lg'>Visit Our School <FaPlayCircle /></button>
+                    <button className='flex rounded-xl bg-yellow-300 my-3 p-3 lg:my-6 lg:p-6 items-center justify-center text-sm lg:text-2xl md:text-lg'>Visit Our School &nbsp; <FaPlayCircle size={36} /></button>
                 </div>
             </div>
         </div>
