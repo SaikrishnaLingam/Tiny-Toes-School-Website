@@ -11,6 +11,9 @@ import UnleashPotential from "./components/UnleashPotential";
 import HomeGallery from './components/HomeGallery';
 import KnowldegeCorner from "./components/KnowldegeCorner";
 import Testimonial from "./components/Testimonials/Testimonial.jsx";
+import EducateChildren from "./components/EducateChildren.jsx";
+import HoverCards from "./components/HoverCards.jsx";
+import ImageFlip from "./components/ImageFlip.jsx";
 
 function App() {
     const [privacyPolicy, setPrivacyPolicy] = useState(false)
@@ -27,11 +30,11 @@ function App() {
                 {/* make buttons functinal */}
                     <HomeSlider />
                     <Principal />
-                    {/* Cards */}
+                        <HoverCards />
                     <AdmissionAd />
-                    {/* Embrace Learning section */}
+                        <ImageFlip />
                     <UnleashPotential />
-                    {/* Educate for children */}
+                        <EducateChildren />
                     <Testimonial />
                     <KnowldegeCorner />
                         {/* Knowledge Sharing Corner - blog(Knowledge Area) */}
