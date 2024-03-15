@@ -50,19 +50,19 @@ const Testimonial = () => {
                     className={`font-bold text-lg md:text-2xl text-white hover:underline ${filter === "parent" ? "text-yellow-400 underline" : ""}`}
                     onClick={() => handleFilterChange("parent")}
                 >
-                    Parents
+                    Parent Corner
                 </button>
                 <button
                     className={`font-bold text-lg md:text-2xl text-white hover:underline ${filter === "alumni" ? "text-yellow-400 underline" : ""}`}
                     onClick={() => handleFilterChange("alumni")}
                 >
-                    Alumni
+                    Student Alumni
                 </button>
                 <button
                     className={`font-bold text-lg md:text-2xl text-white hover:underline ${filter === "teacher" ? "text-yellow-400 underline" : ""}`}
                     onClick={() => handleFilterChange("teacher")}
                 >
-                    Teachers
+                    Teacher Corner
                 </button>
             </div>
             

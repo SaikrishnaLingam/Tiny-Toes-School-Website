@@ -32,7 +32,7 @@ function App() {
                     <Principal />
                         <HoverCards />
                     <AdmissionAd />
-                        <ImageFlip />
+                    <ImageFlip />
                     <UnleashPotential />
                         <EducateChildren />
                     <Testimonial />
