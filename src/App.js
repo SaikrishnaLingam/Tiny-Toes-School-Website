@@ -11,7 +11,7 @@ import UnleashPotential from "./components/UnleashPotential";
 import HomeGallery from './components/HomeGallery';
 import KnowldegeCorner from "./components/KnowldegeCorner";
 import Testimonial from "./components/Testimonials/Testimonial.jsx";
-import EducateChildren from "./components/EducateChildren.jsx";
+import EducateChildren from "./components/EducateChildren/EducateChildren.jsx";
 import HoverCards from "./components/HoverCards.jsx";
 import ImageFlip from "./components/ImageFlip.jsx";
 
