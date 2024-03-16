@@ -5,6 +5,7 @@ import gallery3 from '../assests/gallery/gallery3.jpeg'
 import gallery4 from '../assests/gallery/gallery4.jpeg'
 import gallery5 from '../assests/gallery/gallery5.jpeg'
 import gallery6 from '../assests/gallery/gallery6.jpeg'
+import { Link } from 'react-router-dom';
 
 const HomeGallery = () => {
     return (
@@ -31,8 +32,11 @@ const HomeGallery = () => {
                 </div>
             </div>
             <div>
-                {/* Redirect to Gallery Pages */}
-                <button className='bg-yellow-300 my-4 mx-2 py-2 px-8 rounded-lg font-semibold text-xl'>View More</button>
+                <Link to="/gallery">
+                    <button className='bg-yellow-300 my-4 mx-2 py-2 px-8 rounded-lg font-semibold text-xl'>
+                        View More
+                    </button>
+                </Link>
             </div>
         </div>
     )

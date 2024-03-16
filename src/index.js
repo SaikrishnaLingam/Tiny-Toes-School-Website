@@ -13,6 +13,7 @@ import KnowledgeArea from './components/pages/KnowledgeArea';
 import Gallery from './components/pages/Gallery';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import Layout from './Layout';
+import BlogPage from './components/Blog/BlogPage';
 
 // Need to add routes
 const router = createBrowserRouter(
@@ -27,6 +28,9 @@ const router = createBrowserRouter(
             <Route path='/knowledge-area' element={<KnowledgeArea />}/>
             <Route path='/gallery' element={<Gallery />}/>
             <Route path='/privacy-policy' element={<PrivacyPolicy />}/>
+            {/* edit the params */}
+            <Route path='/blog/:id' element={<BlogPage />}/>
+            <Route path='*' element={<h1 className='text-center m-10 text-5xl bg-red-400 p-10'>Not Found</h1>}/>
         </Route>
     )
 )

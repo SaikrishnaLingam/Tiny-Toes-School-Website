@@ -10,7 +10,7 @@ const HoverCard = ({ data }) => {
 
     return (
         <div
-            className="relative overflow-hidden cursor-pointer"
+            className="relative overflow-hidden"
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
         >

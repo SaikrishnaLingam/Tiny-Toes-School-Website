@@ -1,8 +1,11 @@
 import React from 'react'
+import KnowledgeCorner from '../KnowldegeCorner'
 
 const KnowledgeArea = () => {
     return (
-        <div>Knowledge Area</div>
+        <div>
+            <KnowledgeCorner />
+        </div>
     )
 }
 

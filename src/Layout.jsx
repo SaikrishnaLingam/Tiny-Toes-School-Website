@@ -9,6 +9,7 @@ import EducateChildren from "./components/EducateChildren/EducateChildren.jsx";
 import ImageFlip from "./components/ImageFlip.jsx";
 import HomeSlider from "./components/HomeSlider.jsx";
 import HoverComponent from './components/HoverCard/HoverComponent.jsx';
+import BlogPage from './components/Blog/BlogPage.jsx';
 
 const Layout = () => {
     return (
@@ -22,9 +23,7 @@ const Layout = () => {
             <EducateChildren />
             <Testimonial />
             <KnowldegeCorner />
-            {/* Knowledge Sharing Corner - blog(Knowledge Area) */}
             <HomeGallery />
-            {/* Route this View More button in Home Gallery to the Gallery Component in the Pages folder */}
         </>
     )
 }
