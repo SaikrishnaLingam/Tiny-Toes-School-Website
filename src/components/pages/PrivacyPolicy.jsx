@@ -2,9 +2,9 @@ import React from 'react'
 
 const PrivacyPolicy = () => {
     return (
-        <div className='mx-32 p-8 border-[1px] border-black my-11'>
-            <h1 className='text-3xl pb-4'>Privacy Policy: </h1>
-            <h3 className='text-lg pb-3'>Effective Date: 11 March 2024</h3>
+        <div className='m-2 p-1 md:mx-32 md:p-8 border-[1px] border-black my-11'>
+            <h1 className='text-3xl md:pb-4'>Privacy Policy: </h1>
+            <h3 className='text-lg md:pb-3'>Effective Date: 11 March 2024</h3>
             <p>Welcome to TinyToes Play School's website. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website and engage with our content. By accessing or using our website, you agree to the terms of this Privacy Policy.</p>
             <ol type="1">
                 <li className='py-3'>

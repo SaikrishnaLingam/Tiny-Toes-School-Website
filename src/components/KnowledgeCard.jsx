@@ -18,7 +18,7 @@ const KnowledgeCard = ({ cardKey, title, summary, pic, text, buttoncolor }) => {
                 <p className='text-sm text-gray-700 mb-4'>{summary}</p>
                 <p className='text-sm text-gray-700 flex-grow'>{text}</p> 
                 {/* Link the button to the respective blog using the blog's ID */}
-                <Link onClick={scrollToTop} to={`/blog/${cardKey}`} className={`p-4 ${buttoncolor}`}>
+                <Link onClick={scrollToTop} to={`/blog/${cardKey}`} className={`p-4 ${buttoncolor} transition-all ease-in-out duration-300 transform hover:scale-105`}>
                     Read More
                 </Link>
             </div>
