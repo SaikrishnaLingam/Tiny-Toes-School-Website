@@ -1,15 +1,15 @@
-:root {
+/* :root {
     --color-text: #2c3e50;
     --color-text-light: #34495e;
     --color-white: #ecf0f1;
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
     --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
     --line: 1px solid var(--color-grey-light-2);
-}
+} */
 
 .carousel {
     width: 50vw;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +32,8 @@
 .img {
     min-width: 50vw;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    padding-right: 64px;
 }
 
 .prev_button {
@@ -47,6 +48,8 @@
     display: flex;
     margin: 1rem 0;
     /* margin-left: 200px; Adjust the margin-left value as needed */
+    margin-left: auto;
+    padding-right: 150px;
 }
 
 .dot {

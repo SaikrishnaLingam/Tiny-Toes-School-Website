@@ -17,7 +17,7 @@ const ContactUs = () => {
                     <form action="#" class="space-y-8">
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-black ">Your email</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 " placeholder="name@tinytoes.com" required />
                         </div>
                         <div>
                             <label for="subject" class="block mb-2 text-sm font-medium text-black ">Subject</label>

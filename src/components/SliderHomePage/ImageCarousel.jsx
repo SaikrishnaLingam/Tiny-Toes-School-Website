@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import './carousel.css';
-import brushstrokegirl from '../../assests/imgs/brushstroke-girl.png'
-import boy1 from '../../assests/imgs/little boy 1.jpg'
-import boy2 from '../../assests/imgs/little boy 2.jpg'
-import girl1 from '../../assests/imgs/little girl 1.jpg'
+// import './carousel.css';
+import slider1 from '../../assests/imgs/slider1.png'
+import slider2 from '../../assests/imgs/slider2.png'
+import slider3 from '../../assests/imgs/slider3.png'
+import slider4 from '../../assests/imgs/slider4.png'
 
 const ImageCarousel = () => {
     const [counter, setCounter] = useState(0);
-    const [autoSlide, setAutoSlide] = useState(true); // Automatically set to true
+    const autoSlide = true; 
     
     const carouselImages = [
-        brushstrokegirl,
-        boy1,
-        girl1,
-        boy2,
+        slider1,
+        slider2,
+        slider3,
+        slider4
     ];
 
     const handleNextImage = () => {
@@ -39,23 +39,23 @@ const ImageCarousel = () => {
     };
 
     return (
-        <section className="carousel">
-            <div className="carousel_slider">
-                <div className="content_inner_slider" style={{ transform: `translateX(-${counter * 100}%)` }}>
+        <section className="lg:w-[69%] xl:w-[65%] md:w-3/4 2xl:w-1/2 h-full flex flex-col relative">
+            <div className="w-full h-full overflow-hidden relative">
+                <div className="w-full h-full flex" style={{ transform: `translateX(-${counter * 100}%)` }}>
                     {carouselImages.map((imageUrl, index) => (
-                        <img key={index} src={imageUrl} alt="" className="img p-10" />
+                        <img key={index} src={imageUrl} alt="" className="w-full h-full lg:object-cover" />
                     ))}
                 </div>
-                <button className="prev_button" onClick={handlePrevImage}>
+                {/* <button className="absolute top-0 left-0" onClick={handlePrevImage}>
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </button>
-                <button className="next_button" onClick={handleNextImage}>
+                <button className="absolute top-0 right-0" onClick={handleNextImage}>
                     <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
+                </button> */}
             </div>
-            <ul className="dots">
+            <ul className="flex ml-auto">
                 {carouselImages.map((_, index) => (
-                    <li key={index} className={`dot ${index === counter ? 'active' : ''}`} onClick={() => handleDotClick(index)}></li>
+                    <li key={index} className={`w-4 h-4 rounded-full mx-2 cursor-pointer bg-yellow-500`} onClick={() => handleDotClick(index)}></li>
                 ))}
             </ul>
         </section>

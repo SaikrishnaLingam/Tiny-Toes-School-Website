@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const HomeSlider = () => {
     return (
-        <div className='bg-pink-600 grid grid-cols-2 justify-between pb-6'>
-            <div className='col-span-1 pl-16'>
+        <div className='bg-pink-600 grid grid-cols-1 lg:grid-cols-3 justify-between pb-6'>
+            <div className='md:col-span-1 lg:pl-36 flex flex-col items-center lg:items-start'>
                 <img src={celebrating} alt="14 Years" className='h-[250px]' />
                 <h1 className='font-extrabold text-2xl lg:text-4xl text-white flex flex-col'>
                     <span>STEP BY STEP,</span>
@@ -23,7 +23,7 @@ const HomeSlider = () => {
                     </button>
                 </Link>
             </div>
-            <div className='flex items-center justify-center col-span-1'>
+            <div className='flex items-center justify-center lg:pr-4 md:col-span-2 '>
                 {/* <img src={brushstrokegirl} alt="Brushstroke Girl" className='h-[89%] w-auto'/> */}
                 <ImageCarousel />
             </div>
