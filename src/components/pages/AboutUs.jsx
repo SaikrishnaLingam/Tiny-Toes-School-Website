@@ -32,7 +32,7 @@ const AboutUs = () => {
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 justify-center'>
-                    <div className='items-center flex'>
+                    <div className='items-center flex justify-center md:justify-start'>
                         <img src={ab2} alt="" />
                     </div>
                     <div className='px-3'>
@@ -40,14 +40,17 @@ const AboutUs = () => {
                         <p className='text-md lg:text-lg pb-4'>TinyToes embraces modern psychological techniques to understand and cater to the unique needs of each child. We recognize that every child is an individual with their own strengths, interests, and pace of development. Our approach involves observing and understanding each child's behavior, ensuring a personalized and supportive learning experience.</p>
                         <p className='text-md lg:text-lg pb-4'>Our educators are trained in child psychology and utilize evidence-based strategies to create a positive and nurturing atmosphere. By incorporating modern psychological techniques, we aim to enhance emotional intelligence, resilience, and social skills in our young learners, empowering them to navigate the complexities of the world with confidence.</p>
                     </div>
+                    <div className='block md:hidden items-center flex justify-center md:justify-start '>
+                        <img src={ab3} alt="" />
+                    </div>
                     <div className='px-3'>
                         <h1 className='text-xl lg:text-3xl py-1 md:py-3 lg:py-6'>Age-Appropriate Curriculum: </h1>
                         <p className='text-md lg:text-lg pb-4'>TinyToes offers a thoughtfully designed curriculum tailored to the specific developmental stages of children aged 18 months to 5 years. Our curriculum focuses on age-appropriate activities that cater to the cognitive, emotional, and physical development of each child. From sensory play to early literacy and numeracy skills, every aspect is carefully integrated to provide a well-rounded learning experience.</p>
                     </div>
-                    <div className='items-center flex'>
+                    <div className='hidden md:block items-center flex justify-center  md:justify-start'>
                         <img src={ab3} alt="" />
                     </div>
-                    <div className='items-center flex'>
+                    <div className='items-center flex justify-center  md:justify-start'>
                         <img src={ab4} alt="" />
                     </div>
                     <div className='px-3'>
@@ -68,8 +71,8 @@ const AboutUs = () => {
 
             <Purple />
 
-            <div className='grid grid-cols-2'>
-                <img src={ab6} alt="" />
+            <div className='grid grid-cols-2 items-center'>
+                <img src={ab6} alt=""/>
                 <div className='px-3'>
                     <h1 className='text-xl lg:text-3xl py-1 md:py-3 lg:py-6'>Parental Engagement: </h1>
                     <p className='text-md lg:text-lg pb-4'>TinyToes recognizes the crucial role of parents in a child's education. We encourage active involvement through regular communication, workshops, and events, creating a strong partnership between home and school.</p>
