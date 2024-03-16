@@ -88,4 +88,4 @@ const AboutUs = () => {
     )
 }
 
-export default withScrollAnimation(AboutUs)
+export default AboutUs
