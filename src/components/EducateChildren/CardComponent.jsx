@@ -1,5 +1,6 @@
 import React from 'react'
 import RegisterButton from '../RegisterButton'
+import { Link } from 'react-router-dom';
 
 const CardComponent = ({ pic, cardColor, title, content, age, seats, index }) => {
     return (
@@ -13,8 +14,8 @@ const CardComponent = ({ pic, cardColor, title, content, age, seats, index }) =>
             <div className='h-8'>{seats}</div>
             {
                 index % 2 === 0 
-                    ? <div className="self-end"><RegisterButton id={0} /></div> 
-                    : <div className="self-start"><RegisterButton id={1} /></div>
+                    ? <div className="self-end"><Link to="/registration-corner"><RegisterButton id={0} /></Link></div> 
+                    : <div className="self-start"><Link to="/registration-corner"><RegisterButton id={1} /></Link></div>
             }
         </div>
     )
