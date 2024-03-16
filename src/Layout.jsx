@@ -6,16 +6,16 @@ import HomeGallery from './components/HomeGallery';
 import KnowldegeCorner from "./components/KnowldegeCorner";
 import Testimonial from "./components/Testimonials/Testimonial.jsx";
 import EducateChildren from "./components/EducateChildren/EducateChildren.jsx";
-import HoverCards from "./components/HoverCards.jsx";
 import ImageFlip from "./components/ImageFlip.jsx";
 import HomeSlider from "./components/HomeSlider.jsx";
+import HoverComponent from './components/HoverCard/HoverComponent.jsx';
 
 const Layout = () => {
     return (
         <>
             <HomeSlider />
             <Principal />
-            <HoverCards />
+            <HoverComponent />
             <AdmissionAd />
             <ImageFlip />
             <UnleashPotential />
