@@ -5,6 +5,7 @@ import gallery3 from '../../assests/gallery/gallery3.jpeg';
 import gallery4 from '../../assests/gallery/gallery4.jpeg';
 import gallery5 from '../../assests/gallery/gallery5.jpeg';
 import gallery6 from '../../assests/gallery/gallery6.jpeg';
+import withScrollAnimation from '../withScrollAnimation';
 
 const Gallery = () => {
     return (
@@ -60,4 +61,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery;
+export default withScrollAnimation(Gallery);

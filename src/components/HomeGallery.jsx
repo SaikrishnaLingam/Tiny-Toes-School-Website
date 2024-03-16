@@ -6,6 +6,7 @@ import gallery4 from '../assests/gallery/gallery4.jpeg';
 import gallery5 from '../assests/gallery/gallery5.jpeg';
 import gallery6 from '../assests/gallery/gallery6.jpeg';
 import { Link } from 'react-router-dom';
+import withScrollAnimation from './withScrollAnimation';
 
 const HomeGallery = () => {
 
@@ -50,4 +51,4 @@ const HomeGallery = () => {
     )
 }
 
-export default HomeGallery;
+export default withScrollAnimation(HomeGallery);

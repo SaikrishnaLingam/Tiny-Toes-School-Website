@@ -1,6 +1,7 @@
 import React from 'react'
 import RegisterButton from '../RegisterButton'
 import { Link } from 'react-router-dom';
+import withScrollAnimation from '../withScrollAnimation';
 
 const CardComponent = ({ pic, cardColor, title, content, age, seats, index }) => {
     return (
@@ -21,4 +22,4 @@ const CardComponent = ({ pic, cardColor, title, content, age, seats, index }) =>
     )
 }
 
-export default CardComponent
+export default withScrollAnimation(CardComponent)

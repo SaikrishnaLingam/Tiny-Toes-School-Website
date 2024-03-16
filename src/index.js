@@ -4,7 +4,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import App from './App';
-import Logo from './components/Logo';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import OurCurriculum from './components/pages/OurCurriculum';
@@ -19,7 +18,6 @@ import BlogPage from './components/Blog/BlogPage';
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<App />}>
-            {/* <Route path='' element={<Logo />}/> */}
             <Route path='' element={<Layout />}/>
             <Route path='/about-us' element={<AboutUs />}/>
             <Route path='/contact-us' element={<ContactUs />}/>

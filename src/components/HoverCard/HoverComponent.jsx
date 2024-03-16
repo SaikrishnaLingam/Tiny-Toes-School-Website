@@ -1,6 +1,7 @@
 import React from 'react'
 import { hoverData } from './HoverData';
 import HoverCard from './HoverCard';
+import withScrollAnimation from '../withScrollAnimation';
 
 const HoverComponent = () => {
     return (
@@ -12,4 +13,4 @@ const HoverComponent = () => {
     );
 }
 
-export default HoverComponent
+export default withScrollAnimation(HoverComponent)

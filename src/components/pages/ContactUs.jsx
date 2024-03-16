@@ -1,4 +1,5 @@
 import React from 'react'
+import withScrollAnimation from '../withScrollAnimation';
 
 const ContactUs = () => {
     return (
@@ -35,5 +36,5 @@ const ContactUs = () => {
     )
 }
 
-export default ContactUs
+export default withScrollAnimation(ContactUs)
 

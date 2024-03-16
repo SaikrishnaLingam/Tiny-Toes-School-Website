@@ -2,6 +2,7 @@ import React from 'react'
 import teddy1 from '../../assests/about/teddy1.jpeg'
 import teddy2 from '../../assests/about/teddy2.jpeg'
 import teddy3 from '../../assests/about/teddy3.jpeg'
+import withScrollAnimation from '../withScrollAnimation';
 
 const Purple = () => {
     return (
@@ -28,4 +29,4 @@ const Purple = () => {
     )
 }
 
-export default Purple
+export default withScrollAnimation(Purple)

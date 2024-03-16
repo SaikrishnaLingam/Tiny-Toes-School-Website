@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { blogData } from './BlogData'; 
+import withScrollAnimation from '../withScrollAnimation';
 
 const BlogPage = () => {
     const { id } = useParams(); // Get the id from URL params
@@ -27,4 +28,4 @@ const BlogPage = () => {
     );
 };
 
-export default BlogPage;
+export default withScrollAnimation(BlogPage);

@@ -10,6 +10,7 @@ import ab4 from '../../assests/about/ab4.png'
 import ab5 from '../../assests/about/ab5.png'
 import ab6 from '../../assests/about/ab6.png'
 import Purple from './Purple'
+import withScrollAnimation from '../withScrollAnimation';
 
 const AboutUs = () => {
     return (
@@ -87,4 +88,4 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs
+export default withScrollAnimation(AboutUs)

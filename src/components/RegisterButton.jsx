@@ -2,6 +2,7 @@ import React from 'react';
 import leftW from '../assests/imgs/left-feet.png';
 import rightW from '../assests/imgs/right-feet.png';
 import leftY from '../assests/imgs/left-feet-yellow.png';
+import withScrollAnimation from './withScrollAnimation';
 
 const RegisterButton = ({ id }) => {
     let leftButton, rightButton, yellowButton;
@@ -68,4 +69,4 @@ const RegisterButton = ({ id }) => {
     );
 };
 
-export default RegisterButton;
+export default withScrollAnimation(RegisterButton);

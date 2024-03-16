@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { testimonials } from './testData';
+import withScrollAnimation from '../withScrollAnimation';
 
 const Testimonial = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -105,4 +106,4 @@ const Testimonial = () => {
     );
 };
 
-export default Testimonial;
+export default withScrollAnimation(Testimonial);

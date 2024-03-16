@@ -2,6 +2,7 @@ import React from 'react'
 import admission from '../assests/imgs/AdmissionAlert.png'
 import yellowBg from '../assests/imgs/yellowBg.png'
 import { Link } from 'react-router-dom';
+import withScrollAnimation from './withScrollAnimation';
 
 const AdmissionAd = () => {
     const scrollToTop = () => {
@@ -31,4 +32,4 @@ const AdmissionAd = () => {
     )
 }
 
-export default AdmissionAd
+export default withScrollAnimation(AdmissionAd)

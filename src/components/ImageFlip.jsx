@@ -2,6 +2,7 @@ import React from 'react'
 import ai1 from '../assests/imgs/ai1.jpg'
 import ai2 from '../assests/imgs/ai2.jpg'
 import { Link } from 'react-router-dom'
+import withScrollAnimation from './withScrollAnimation';
 
 const ImageFlip = () => {
     const scrollToTop = () => {
@@ -37,4 +38,4 @@ const ImageFlip = () => {
     )
 }
 
-export default ImageFlip
+export default withScrollAnimation(ImageFlip)

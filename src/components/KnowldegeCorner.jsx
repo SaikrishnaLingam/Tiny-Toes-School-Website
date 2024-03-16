@@ -1,6 +1,7 @@
 import React from 'react';
 import KnowledgeCard from './KnowledgeCard';
 import { blogData } from './Blog/BlogData';
+import withScrollAnimation from './withScrollAnimation';
 
 const KnowledgeCorner = () => {
     return (
@@ -22,4 +23,4 @@ const KnowledgeCorner = () => {
     );
 };
 
-export default KnowledgeCorner;
+export default withScrollAnimation(KnowledgeCorner);

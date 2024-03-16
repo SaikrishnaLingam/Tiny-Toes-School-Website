@@ -2,6 +2,7 @@ import React from 'react'
 import celebrating from '../assests/imgs/14yrs.png'
 import ImageCarousel from './SliderHomePage/ImageCarousel'
 import { Link } from 'react-router-dom';
+import withScrollAnimation from './withScrollAnimation';
 
 const HomeSlider = () => {
     return (
@@ -31,4 +32,4 @@ const HomeSlider = () => {
     )
 }
 
-export default HomeSlider
+export default withScrollAnimation(HomeSlider)

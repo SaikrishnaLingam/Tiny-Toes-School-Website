@@ -1,6 +1,7 @@
 import React from 'react'
 import CardComponent from './CardComponent'
 import { kidData } from './ChildrenData'
+import withScrollAnimation from '../withScrollAnimation'
 
 const EducateChildren = () => {
     return (
@@ -15,4 +16,4 @@ const EducateChildren = () => {
     )
 }
 
-export default EducateChildren
+export default withScrollAnimation(EducateChildren)

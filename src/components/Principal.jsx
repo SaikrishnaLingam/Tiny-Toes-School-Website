@@ -3,6 +3,7 @@ import RegisterButton from './RegisterButton';
 import principalImg from '../assests/imgs/principal.png'
 import { FaPlayCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import withScrollAnimation from './withScrollAnimation';
 
 const Principal = () => {
     const scrollToTop = () => {
@@ -38,4 +39,4 @@ const Principal = () => {
     );
 };
 
-export default Principal;
+export default withScrollAnimation(Principal);

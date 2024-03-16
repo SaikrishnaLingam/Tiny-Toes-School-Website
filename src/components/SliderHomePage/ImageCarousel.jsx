@@ -5,6 +5,7 @@ import slider2 from '../../assests/imgs/slider2.png'
 import slider3 from '../../assests/imgs/slider3.png'
 import slider4 from '../../assests/imgs/slider4.png'
 
+
 const ImageCarousel = () => {
     const [counter, setCounter] = useState(0);
     const autoSlide = true; 

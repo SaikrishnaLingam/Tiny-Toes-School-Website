@@ -5,6 +5,7 @@ import img3 from '../assests/unleashpotentialImgs/img3.png'
 import img4 from '../assests/unleashpotentialImgs/img4.png'
 import img5 from '../assests/unleashpotentialImgs/img5.png'
 import img6 from '../assests/unleashpotentialImgs/img6.png'
+import withScrollAnimation from './withScrollAnimation';
 
 const UnleashPotential = () => {
     return (
@@ -47,4 +48,4 @@ const UnleashPotential = () => {
     )
 }
 
-export default UnleashPotential
+export default withScrollAnimation(UnleashPotential)
