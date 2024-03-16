@@ -6,8 +6,8 @@ export const hoverData = [
     {
         title: 'Homely Environment',
         hoverPic: hover1,
-        content: 'At TinyToes, we understand the importance of creating a warm and nurturing space that feels like a home away from home for our little ones',
-        popup: "Our classrooms are designed to be cozy and inviting, fostering a sense of comfort and belonging. Our experienced and caring staff members act as extended family, ensuring that each child receives personalized attention and care. We believe that a homely environment is crucial for a child's emotional well-being and contributes significantly to their overall development. From comfortable play areas to themed classrooms, we strive to create an atmosphere that encourages exploration, imagination, and the joy of learning. We believe that when children feel secure and loved, they are more likely to thrive academically and socially.",
+        content: 'At TinyToes, we understand the importance of creating a warm and nurturing space that feels like a home away from home for our little ones.',
+        popup: "At TinyToes, we understand the importance of creating a warm and nurturing space that feels like a home away from home for our little ones. Our classrooms are designed to be cozy and inviting, fostering a sense of comfort and belonging. Our experienced and caring staff members act as extended family, ensuring that each child receives personalized attention and care. We believe that a homely environment is crucial for a child's emotional well-being and contributes significantly to their overall development. From comfortable play areas to themed classrooms, we strive to create an atmosphere that encourages exploration, imagination, and the joy of learning. We believe that when children feel secure and loved, they are more likely to thrive academically and socially.",
         hoverColor: 'bg-purple-500'
     },
     {
@@ -20,8 +20,8 @@ export const hoverData = [
     {
         title: 'Security First',
         hoverPic: hover3,
-        content: 'The safety and security of our students are of paramount importance at TinyToes. We have implemented stringent security measures to create a secure environment',
-        popup: "The safety and security of our students are of paramount importance at TinyToes. We have implemented stringent security measures to create a secure environment for our children. From monitored entry points to CCTV surveillance, we leave no stone unturned in ensuring a safe space for every child. Our staff members undergo thorough background checks, and we maintain a strict visitor policy to control access to our premises. Emergency protocols are in place to address any unforeseen situations, and our dedicated security team is trained to handle various scenarios with utmost professionalism. At TinyToes, parents can rest assured that their child's safety is our top priority.",
+        content: 'The safety and security of our students are of paramount importance at TinyToes. We have implemented stringent security measures to create a secure environment. ',
+        popup: "The safety and security of our students are of paramount importance at TinyToes. We have implemented stringent security measures to create a secure environment. From monitored entry points to CCTV surveillance, we leave no stone unturned in ensuring a safe space for every child. Our staff members undergo thorough background checks, and we maintain a strict visitor policy to control access to our premises. Emergency protocols are in place to address any unforeseen situations, and our dedicated security team is trained to handle various scenarios with utmost professionalism. At TinyToes, parents can rest assured that their child's safety is our top priority.",
         hoverColor: 'bg-emerald-500'
     }
 ]
