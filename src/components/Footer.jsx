@@ -14,7 +14,7 @@ const Footer = ( {setPrivacyPolicy} ) => {
                     <Link to="/registration-corner">Registration Corner</Link>
                     <Link to="/knowledge-area">Knowledge Area</Link>
                     <Link to="/gallery">Gallery</Link>
-                    <Link onClick={() => setPrivacyPolicy(true)}>Privacy Policy</Link>
+                    <Link to='/privacy-policy'>Privacy Policy</Link>
                     <Link to="/contact-us">Contact Us</Link>
                 </div>
             </div>

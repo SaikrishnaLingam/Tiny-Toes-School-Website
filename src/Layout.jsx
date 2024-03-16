@@ -8,11 +8,12 @@ import Testimonial from "./components/Testimonials/Testimonial.jsx";
 import EducateChildren from "./components/EducateChildren/EducateChildren.jsx";
 import HoverCards from "./components/HoverCards.jsx";
 import ImageFlip from "./components/ImageFlip.jsx";
+import HomeSlider from "./components/HomeSlider.jsx";
 
 const Layout = () => {
     return (
         <>
-            
+            <HomeSlider />
             <Principal />
             <HoverCards />
             <AdmissionAd />
