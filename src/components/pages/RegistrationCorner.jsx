@@ -1,6 +1,9 @@
 //Form with whatsapp
 import React, { useState } from 'react';
-
+import axios from 'axios';
+const YOUR_UPLOAD_PRESET = 'lingam';
+const CLOUDINARY_BASE_URL = 'https://api.cloudinary.com/v1_1/';
+const YOUR_CLOUDINARY_CLOUD_NAME = "df9eizepz";
 const RegistrationCorner = () => {
     const initialFormData = {
         name: '',
@@ -55,87 +58,108 @@ const RegistrationCorner = () => {
         setErrors({}); // Clear any existing errors
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+
         e.preventDefault();
         setIsSubmitting(true);
         // Basic validation
-        if (!formData.name) {
-            setErrors((prevErrors) => ({ ...prevErrors, name: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.age) {
-            setErrors((prevErrors) => ({ ...prevErrors, age: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.gender) {
-            setErrors((prevErrors) => ({ ...prevErrors, gender: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.fatherName) {
-            setErrors((prevErrors) => ({ ...prevErrors, fatherName: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.motherName) {
-            setErrors((prevErrors) => ({ ...prevErrors, motherName: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
 
-        if (!formData.phNumber1) {
-            setErrors((prevErrors) => ({ ...prevErrors, phNumber1: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.phNumber2) {
-            setErrors((prevErrors) => ({ ...prevErrors, phNumber2: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.address) {
-            setErrors((prevErrors) => ({ ...prevErrors, address: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.city) {
-            setErrors((prevErrors) => ({ ...prevErrors, city: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.pinCode) {
-            setErrors((prevErrors) => ({ ...prevErrors, pinCode: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.studentImg) {
-            setErrors((prevErrors) => ({ ...prevErrors, studentImg: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.idType) {
-            setErrors((prevErrors) => ({ ...prevErrors, idType: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.idType2) {
-            setErrors((prevErrors) => ({ ...prevErrors, idType2: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.idTypeFile) {
-            setErrors((prevErrors) => ({ ...prevErrors, idTypeFile: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
-        if (!formData.idType2File) {
-            setErrors((prevErrors) => ({ ...prevErrors, idType2File: 'Required' }));
-            setIsSubmitting(false);
-            return;
-        }
+        // if (!formData.name) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, name: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.age) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, age: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.gender) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, gender: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.fatherName) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, fatherName: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.motherName) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, motherName: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
 
+        // if (!formData.phNumber1) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, phNumber1: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.phNumber2) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, phNumber2: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.address) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, address: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.city) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, city: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.pinCode) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, pinCode: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.studentImg) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, studentImg: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.idType) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, idType: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.idType2) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, idType2: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.idTypeFile) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, idTypeFile: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+        // if (!formData.idType2File) {
+        //     setErrors((prevErrors) => ({ ...prevErrors, idType2File: 'Required' }));
+        //     setIsSubmitting(false);
+        //     return;
+        // }
+
+        const uploadedUrls = await Promise.all(
+            Object.entries(formData).map(async ([fieldName, file]) => {
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('upload_preset', 'lingam');
+
+                    const response = await axios.post(
+                        `${CLOUDINARY_BASE_URL}${YOUR_CLOUDINARY_CLOUD_NAME}/image/upload`,
+                        formData
+                    );
+
+                    return response.data.secure_url; // Return the uploaded image URL
+                } else {
+                    return null; // If no file, return null
+                }
+            })
+        );
+        console.log(uploadedUrls);
         const data = {
             Id: Math.floor(Math.random() * 1000),
             Name: formData.name,
@@ -152,17 +176,17 @@ const RegistrationCorner = () => {
             Address: formData.address,
             City: formData.city,
             PinCode: formData.pinCode,
-            StudentImg: formData.studentImg[0].name,
+            StudentImg: formData.uploadedUrls[0],
             IdType: formData.idType,
-            IdTypeFile: formData.idTypeFile[0].name,
+            IdTypeFile: formData.uploadedUrls[1],
             IdType2: formData.idType2,
-            IdType2File: formData.idType2File[0].name,
+            IdType2File: formData.uploadedUrls[2],
             Allergies: formData.allergies,
             Disabilities: formData.disabilities,
             Medical: formData.medical,
             Dosage: formData.dosage,
-            FatherImg: formData.fatherImg ? formData.fatherImg[0].name : '',
-            MotherImg: formData.motherImg ? formData.motherImg[0].name : '',
+            FatherImg: formData.fatherImg ? uploadedUrls[3] : '',
+            MotherImg: formData.motherImg ? uploadedUrls[4].name : '',
 
             "Created at": new Date()
         };
@@ -186,6 +210,7 @@ const RegistrationCorner = () => {
                 setIsSubmitting(false);
             });
     };
+    const message = encodeURIComponent('Your WhatsApp message here');
 
     return (
         <div>
@@ -204,9 +229,10 @@ const RegistrationCorner = () => {
                         type="file"
                         id="studentImg"
                         name="studentImg"
-                        onChange={handleFileChange}
+                        onChange={(e) => handleFileChange('studentImg', e)} // Ensure 'e' is passed correctly
                         className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
+
                     {errors.studentImg && <div>{errors.studentImg}</div>}
                 </div>
                 {/* name */}
@@ -536,7 +562,7 @@ const RegistrationCorner = () => {
                         type="file"
                         id="fatherImg"
                         name="fatherImg"
-                        onChange={handleFileChange}
+                        onChange={(e) => handleFileChange('fatherImg', e)} // Ensure 'e' is passed correctly
                         className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.fatherImg && <div>{errors.fatherImg}</div>}
@@ -548,7 +574,7 @@ const RegistrationCorner = () => {
                         type="file"
                         id="motherImg"
                         name="motherImg"
-                        onChange={handleFileChange}
+                        onChange={(e) => handleFileChange('motherImg', e)} // Ensure 'e' is passed correctly
                         className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.motherImg && <div>{errors.motherImg}</div>}
@@ -556,9 +582,11 @@ const RegistrationCorner = () => {
                 {/* Clear button */}
                 <button type="button" onClick={handleClear} className='bg-gray-400 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>Clear</button>
                 {/* Submit button */}
-                <button type="submit" disabled={isSubmitting} className='bg-blue-600 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>
-                    Submit
-                </button>
+                <a href={`whatsapp://send?text=${message}`} data-action="share/whatsapp/share">
+                    <button type="submit" disabled={isSubmitting} className='bg-blue-600 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>
+                        Submit
+                    </button>
+                </a>
             </form >
 
             {

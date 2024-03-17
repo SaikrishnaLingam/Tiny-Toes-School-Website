@@ -4,22 +4,29 @@ import { useState } from 'react';
 import { Contact, Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Optional - adds smooth scrolling animation
+    });
+};
+
 const NavBarItems = () => {
     return (
         <div className="flex flex-col lg:flex-row lg:space-x-8 font-semibold items-center">
-            <NavLink to="/" className="nav-link">
+            <NavLink onClick={scrollToTop} to="/" className="nav-link">
                 Home
             </NavLink>
-            <NavLink to="/about-us" className="nav-link">
+            <NavLink onClick={scrollToTop} to="/about-us" className="nav-link">
                 About Us
             </NavLink>
-            <NavLink to="/our-curriculum" className="nav-link">
+            <NavLink onClick={scrollToTop} to="/our-curriculum" className="nav-link">
                 Our Curriculum
             </NavLink>
-            <NavLink to="/gallery" className="nav-link">
+            <NavLink onClick={scrollToTop} to="/gallery" className="nav-link">
                 Gallery
             </NavLink>
-            <NavLink to="/contact-us" className="nav-link">
+            <NavLink onClick={scrollToTop} to="/contact-us" className="nav-link">
                 Contact Us
             </NavLink>
         </div>
@@ -35,7 +42,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className="flex flex-row w-full justify-between items-center py-4 px-8 lg:px-12 bg-slate-100">
+            <nav className="flex flex-row w-full justify-between items-center py-4 px-8 lg:px-12 bg-slate-100 ">
                 <Logo />
                 <div className="lg:hidden">
                     <button onClick={toggleNavbar}>
@@ -61,7 +68,7 @@ const NavBar = () => {
 
 const Header = () => {
     return (
-        <header className="top-0 z-[20] flex-wrap w-full items-center justify-between ">
+        <header className="sticky top-0 z-[20] flex-wrap w-full items-center justify-between ">
             <NavBar />
         </header>
     );
