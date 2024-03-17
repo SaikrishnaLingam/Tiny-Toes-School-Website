@@ -2,7 +2,35 @@
 import React, { useState } from 'react';
 
 const RegistrationCorner = () => {
-    const [formData, setFormData] = useState({ name: '', email: '' });
+    const initialFormData = {
+        name: '',
+        age: '',
+        gender: '',
+        fatherName: '',
+        motherName: '',
+        occupation1: '',
+        occupation2: '',
+        qualification1: '',
+        qualification2: '',
+        phNumber1: '',
+        phNumber2: '',
+        address: '',
+        city: '',
+        pinCode: '',
+        fatherImg: null,
+        motherImg: null,
+        studentImg: null,
+        idType: '',
+        idType2: '',
+        idTypeFile: null,
+        idType2File: null,
+        allergies: '',
+        disabilities: '',
+        medical: '',
+        dosage: '',
+    };
+
+    const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,6 +50,10 @@ const RegistrationCorner = () => {
         }));
     };
 
+    const handleClear = () => {
+        setFormData(initialFormData); // Reset form fields to initial state
+        setErrors({}); // Clear any existing errors
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,17 +64,106 @@ const RegistrationCorner = () => {
             setIsSubmitting(false);
             return;
         }
-        if (!formData.email) {
-            setErrors((prevErrors) => ({ ...prevErrors, email: 'Required' }));
+        if (!formData.age) {
+            setErrors((prevErrors) => ({ ...prevErrors, age: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.gender) {
+            setErrors((prevErrors) => ({ ...prevErrors, gender: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.fatherName) {
+            setErrors((prevErrors) => ({ ...prevErrors, fatherName: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.motherName) {
+            setErrors((prevErrors) => ({ ...prevErrors, motherName: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!formData.phNumber1) {
+            setErrors((prevErrors) => ({ ...prevErrors, phNumber1: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.phNumber2) {
+            setErrors((prevErrors) => ({ ...prevErrors, phNumber2: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.address) {
+            setErrors((prevErrors) => ({ ...prevErrors, address: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.city) {
+            setErrors((prevErrors) => ({ ...prevErrors, city: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.pinCode) {
+            setErrors((prevErrors) => ({ ...prevErrors, pinCode: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.studentImg) {
+            setErrors((prevErrors) => ({ ...prevErrors, studentImg: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.idType) {
+            setErrors((prevErrors) => ({ ...prevErrors, idType: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.idType2) {
+            setErrors((prevErrors) => ({ ...prevErrors, idType2: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.idTypeFile) {
+            setErrors((prevErrors) => ({ ...prevErrors, idTypeFile: 'Required' }));
+            setIsSubmitting(false);
+            return;
+        }
+        if (!formData.idType2File) {
+            setErrors((prevErrors) => ({ ...prevErrors, idType2File: 'Required' }));
             setIsSubmitting(false);
             return;
         }
 
         const data = {
-            Id: Math.floor(Math.random() * 1000), // Generating a random Id for demonstration
+            Id: Math.floor(Math.random() * 1000),
             Name: formData.name,
             Gender: formData.gender,
             Age: formData.age,
+            FatherName: formData.fatherName,
+            MotherName: formData.motherName,
+            Occupation1: formData.occupation1,
+            Occupation2: formData.occupation2,
+            Qualification1: formData.qualification1,
+            Qualification2: formData.qualification2,
+            PhNumber1: formData.phNumber1,
+            PhNumber2: formData.phNumber2,
+            Address: formData.address,
+            City: formData.city,
+            PinCode: formData.pinCode,
+            StudentImg: formData.studentImg[0].name,
+            IdType: formData.idType,
+            IdTypeFile: formData.idTypeFile[0].name,
+            IdType2: formData.idType2,
+            IdType2File: formData.idType2File[0].name,
+            Allergies: formData.allergies,
+            Disabilities: formData.disabilities,
+            Medical: formData.medical,
+            Dosage: formData.dosage,
+            FatherImg: formData.fatherImg ? formData.fatherImg[0].name : '',
+            MotherImg: formData.motherImg ? formData.motherImg[0].name : '',
+
             "Created at": new Date()
         };
 
@@ -58,7 +179,7 @@ const RegistrationCorner = () => {
             .then((responseData) => {
                 console.log("Form data sent:", responseData);
                 setIsSubmitting(false);
-                setFormData({ name: '', email: '' }); // Reset form fields after successful submission
+                setFormData(initialFormData); // Reset form fields after successful submission
             })
             .catch((error) => {
                 console.error("Error submitting form data:", error);
@@ -75,20 +196,19 @@ const RegistrationCorner = () => {
 
             <h1 className='text-2xl font-semibold py-4 text-center'>Registration Form</h1>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 md:gap-6 px-2 md:px-14'>
                 {/* student image */}
-                <div>
+                <div className='md:col-span-2'>
                     <label htmlFor="studentImg">Student's Image:</label>
                     <input
                         type="file"
                         id="studentImg"
                         name="studentImg"
                         onChange={handleFileChange}
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.studentImg && <div>{errors.studentImg}</div>}
                 </div>
-
                 {/* name */}
                 <div>
                     <input
@@ -98,38 +218,40 @@ const RegistrationCorner = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder='Name of the Student'
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.name && <div>{errors.name}</div>}
                 </div>
-                {/* age */}
-                <div>
-                    <input
-                        type='number'
-                        id='age'
-                        name='age'
-                        value={formData.age}
-                        onChange={handleChange}
-                        placeholder='Age'
-                        className='border-2 rounded-md'
-                    />
-                    {errors.age && <div>{errors.age}</div>}
-                </div>
-                {/* gender */}
-                <div>
-                    <select
-                        id='gender'
-                        name='gender'
-                        value={formData.gender}
-                        onChange={handleChange}
-                        className='border-2 rounded-md'
-                    >
-                        <option value=''>Select Gender</option>
-                        <option value='male'>Male</option>
-                        <option value='female'>Female</option>
-                        <option value='other'>Other</option>
-                    </select>
-                    {errors.gender && <div>{errors.gender}</div>}
+                {/* age/gender */}
+                <div className="flex">
+                    <div className="w-1/2 pr-2">
+                        <input
+                            type='number'
+                            id='age'
+                            name='age'
+                            value={formData.age}
+                            onChange={handleChange}
+                            placeholder='Age'
+                            className='border-2 rounded-md w-full mt-0.5 py-1'
+                        />
+                        {errors.age && <div>{errors.age}</div>}
+                    </div>
+                    {/* gender */}
+                    <div className="w-1/2 pl-2">
+                        <select
+                            id='gender'
+                            name='gender'
+                            value={formData.gender}
+                            onChange={handleChange}
+                            className='border-2 rounded-md w-full mt-0.5 py-1'
+                        >
+                            <option value=''>Select Gender</option>
+                            <option value='male'>Male</option>
+                            <option value='female'>Female</option>
+                            <option value='other'>Other</option>
+                        </select>
+                        {errors.gender && <div>{errors.gender}</div>}
+                    </div>
                 </div>
                 {/* father name */}
                 <div>
@@ -140,7 +262,7 @@ const RegistrationCorner = () => {
                         value={formData.fatherName}
                         onChange={handleChange}
                         placeholder="Father's Name"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.fatherName && <div>{errors.fatherName}</div>}
                 </div>
@@ -153,7 +275,7 @@ const RegistrationCorner = () => {
                         value={formData.motherName}
                         onChange={handleChange}
                         placeholder="Mother's Name"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.motherName && <div>{errors.motherName}</div>}
                 </div>
@@ -166,7 +288,7 @@ const RegistrationCorner = () => {
                         value={formData.occupation1}
                         onChange={handleChange}
                         placeholder="Occupation"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.occupation1 && <div>{errors.occupation1}</div>}
                 </div>
@@ -179,7 +301,7 @@ const RegistrationCorner = () => {
                         value={formData.occupation2}
                         onChange={handleChange}
                         placeholder="Occupation"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.occupation2 && <div>{errors.occupation2}</div>}
                 </div>
@@ -192,7 +314,7 @@ const RegistrationCorner = () => {
                         value={formData.qualification1}
                         onChange={handleChange}
                         placeholder="Qualification"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.qualification1 && <div>{errors.qualification1}</div>}
                 </div>
@@ -205,7 +327,7 @@ const RegistrationCorner = () => {
                         value={formData.qualification2}
                         onChange={handleChange}
                         placeholder="Qualification"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.qualification2 && <div>{errors.qualification2}</div>}
                 </div>
@@ -218,7 +340,7 @@ const RegistrationCorner = () => {
                         value={formData.phNumber1}
                         onChange={handleChange}
                         placeholder="Contact Number"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.phNumber1 && <div>{errors.phNumber1}</div>}
                 </div>
@@ -231,12 +353,12 @@ const RegistrationCorner = () => {
                         value={formData.phNumber2}
                         onChange={handleChange}
                         placeholder="Contact Number"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.phNumber2 && <div>{errors.phNumber2}</div>}
                 </div>
                 {/* address */}
-                <div>
+                <div className='md:col-span-2 '>
                     <input
                         type="text"
                         id="address"
@@ -244,7 +366,7 @@ const RegistrationCorner = () => {
                         value={formData.address}
                         onChange={handleChange}
                         placeholder="Address"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full'
                     />
                     {errors.address && <div>{errors.address}</div>}
                 </div>
@@ -257,7 +379,7 @@ const RegistrationCorner = () => {
                         value={formData.city}
                         onChange={handleChange}
                         placeholder="City"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.city && <div>{errors.city}</div>}
                 </div>
@@ -270,32 +392,36 @@ const RegistrationCorner = () => {
                         value={formData.pinCode}
                         onChange={handleChange}
                         placeholder="Pin Code"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.pinCode && <div>{errors.pinCode}</div>}
                 </div>
                 {/* aadhaar/voter */}
-                <div>
-                    <input
-                        type="radio"
-                        id="aadhaar"
-                        name="idType"
-                        value="aadhaar"
-                        checked={formData.idType === "aadhaar"}
-                        onChange={handleChange}
-                        className='border-2 rounded-md'
-                    />
-                    <label htmlFor="aadhaar">Aadhaar</label>
-                    <input
-                        type="radio"
-                        id="voter"
-                        name="idType"
-                        value="voter"
-                        checked={formData.idType === "voter"}
-                        onChange={handleChange}
-                        className='border-2 rounded-md'
-                    />
-                    <label htmlFor="voter">Voter ID</label>
+                <div className="flex justify-between">
+                    <div className='flex flex-row items-center w-1/2'>
+                        <input
+                            type="radio"
+                            id="aadhaar"
+                            name="idType"
+                            value="aadhaar"
+                            checked={formData.idType === "aadhaar"}
+                            onChange={handleChange}
+                            className='border-2 rounded-md w-1/4 mt-0.5 py-1'
+                        />
+                        <label htmlFor="aadhaar" className='w-full'>Aadhaar</label>
+                    </div>
+                    <div className='flex flex-row items-center w-1/2'>
+                        <input
+                            type="radio"
+                            id="voter"
+                            name="idType"
+                            value="voter"
+                            checked={formData.idType === "voter"}
+                            onChange={handleChange}
+                            className='border-2 rounded-md w-1/4 mt-0.5 py-1'
+                        />
+                        <label htmlFor="voter" className='w-full'>Voter ID</label>
+                    </div>
                 </div>
                 {errors.idType && <div>{errors.idType}</div>}
                 {/* File Input for idType */}
@@ -306,32 +432,36 @@ const RegistrationCorner = () => {
                         id="idTypeFile"
                         name="idTypeFile"
                         onChange={(e) => handleFileChange('idType', e)}
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.idTypeFile && <div>{errors.idTypeFile}</div>}
                 </div>
                 {/* studentAadhaar/birth */}
-                <div>
-                    <input
-                        type="radio"
-                        id="studentAadhaar"
-                        name="idType2"
-                        value="studentAadhaar"
-                        checked={formData.idType2 === "studentAadhaar"}
-                        onChange={handleChange}
-                        className='border-2 rounded-md'
-                    />
-                    <label htmlFor="studentAadhaar">Student Aadhaar Card</label>
-                    <input
-                        type="radio"
-                        id="birth"
-                        name="idType2"
-                        value="birth"
-                        checked={formData.idType2 === "birth"}
-                        onChange={handleChange}
-                        className='border-2 rounded-md'
-                    />
-                    <label htmlFor="birth">Student Birth Certificate</label>
+                <div className="flex justify-between">
+                    <div className='flex flex-row items-center w-1/2'>
+                        <input
+                            type="radio"
+                            id="studentAadhaar"
+                            name="idType2"
+                            value="studentAadhaar"
+                            checked={formData.idType2 === "studentAadhaar"}
+                            onChange={handleChange}
+                            className='border-2 rounded-md w-1/4 mt-0.5 py-1'
+                        />
+                        <label htmlFor="studentAadhaar" className='w-full'>Student Aadhaar Card</label>
+                    </div>
+                    <div className='flex flex-row items-center w-1/2'>
+                        <input
+                            type="radio"
+                            id="birth"
+                            name="idType2"
+                            value="birth"
+                            checked={formData.idType2 === "birth"}
+                            onChange={handleChange}
+                            className='border-2 rounded-md w-1/4 mt-0.5 py-1'
+                        />
+                        <label htmlFor="birth" className='w-full'>Student Birth Certificate</label>
+                    </div>
                 </div>
                 {errors.idType2 && <div>{errors.idType2}</div>}
                 {/* File Input for idType2 */}
@@ -342,10 +472,10 @@ const RegistrationCorner = () => {
                         id="idType2File"
                         name="idType2File"
                         onChange={(e) => handleFileChange('idType2', e)}
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.idType2File && <div>{errors.idType2File}</div>}
-                </div>  
+                </div>
                 {/* allergies */}
                 <div>
                     <input
@@ -355,7 +485,7 @@ const RegistrationCorner = () => {
                         value={formData.allergies}
                         onChange={handleChange}
                         placeholder="Any Allergies"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.allergies && <div>{errors.allergies}</div>}
                 </div>
@@ -368,12 +498,12 @@ const RegistrationCorner = () => {
                         value={formData.disabilities}
                         onChange={handleChange}
                         placeholder="Any Disabilities"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.disabilities && <div>{errors.disabilities}</div>}
                 </div>
                 {/* medical */}
-                <div>
+                <div className='md:col-span-2'>
                     <input
                         type="text"
                         id="medical"
@@ -381,12 +511,12 @@ const RegistrationCorner = () => {
                         value={formData.medical}
                         onChange={handleChange}
                         placeholder="Any medical issues"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.medical && <div>{errors.medical}</div>}
                 </div>
                 {/* dosage */}
-                <div>
+                <div className='md:col-span-2'>
                     <input
                         type="text"
                         id="dosage"
@@ -394,7 +524,7 @@ const RegistrationCorner = () => {
                         value={formData.dosage}
                         onChange={handleChange}
                         placeholder="Mention Medicine and Medical Dosage"
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.dosage && <div>{errors.dosage}</div>}
                 </div>
@@ -407,7 +537,7 @@ const RegistrationCorner = () => {
                         id="fatherImg"
                         name="fatherImg"
                         onChange={handleFileChange}
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.fatherImg && <div>{errors.fatherImg}</div>}
                 </div>
@@ -419,25 +549,27 @@ const RegistrationCorner = () => {
                         id="motherImg"
                         name="motherImg"
                         onChange={handleFileChange}
-                        className='border-2 rounded-md'
+                        className='border-2 rounded-md w-full mt-0.5 py-1'
                     />
                     {errors.motherImg && <div>{errors.motherImg}</div>}
                 </div>
-
-
-
-
-                <button type="submit" disabled={isSubmitting} className='bg-blue-600 my-4 mx-2 py-2 px-8 rounded-lg font-semibold text-xl'>
+                {/* Clear button */}
+                <button type="button" onClick={handleClear} className='bg-gray-400 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>Clear</button>
+                {/* Submit button */}
+                <button type="submit" disabled={isSubmitting} className='bg-blue-600 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>
                     Submit
                 </button>
-            </form>
-            {formData.name && formData.email && (
-                <div>
-                    <h2>Form Submission Data</h2>
-                    <pre>{JSON.stringify(formData, null, 2)}</pre>
-                </div>
-            )}
-        </div>
+            </form >
+
+            {
+                formData.name && formData.age && (
+                    <div>
+                        <h2>Form Submission Data</h2>
+                        <pre>{JSON.stringify(formData, null, 2)}</pre>
+                    </div>
+                )
+            }
+        </div >
     );
 };
 
