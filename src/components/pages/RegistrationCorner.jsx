@@ -1,6 +1,7 @@
 //Form with whatsapp
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const YOUR_UPLOAD_PRESET = 'lingam';
 const CLOUDINARY_BASE_URL = 'https://api.cloudinary.com/v1_1/';
 const YOUR_CLOUDINARY_CLOUD_NAME = "df9eizepz";
@@ -58,159 +59,160 @@ const RegistrationCorner = () => {
         setErrors({}); // Clear any existing errors
     };
 
-    const handleSubmit = async (e) => {
+    // const handleSubmit = async (e) => {
 
-        e.preventDefault();
-        setIsSubmitting(true);
-        // Basic validation
+    //     e.preventDefault();
+    //     setIsSubmitting(true);
+    //     // Basic validation
 
-        // if (!formData.name) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, name: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.age) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, age: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.gender) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, gender: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.fatherName) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, fatherName: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.motherName) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, motherName: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
+    //     // if (!formData.name) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, name: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.age) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, age: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.gender) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, gender: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.fatherName) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, fatherName: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.motherName) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, motherName: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
 
-        // if (!formData.phNumber1) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, phNumber1: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.phNumber2) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, phNumber2: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.address) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, address: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.city) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, city: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.pinCode) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, pinCode: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.studentImg) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, studentImg: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.idType) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, idType: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.idType2) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, idType2: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.idTypeFile) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, idTypeFile: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
-        // if (!formData.idType2File) {
-        //     setErrors((prevErrors) => ({ ...prevErrors, idType2File: 'Required' }));
-        //     setIsSubmitting(false);
-        //     return;
-        // }
+    //     // if (!formData.phNumber1) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, phNumber1: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.phNumber2) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, phNumber2: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.address) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, address: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.city) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, city: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.pinCode) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, pinCode: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.studentImg) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, studentImg: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.idType) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, idType: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.idType2) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, idType2: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.idTypeFile) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, idTypeFile: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
+    //     // if (!formData.idType2File) {
+    //     //     setErrors((prevErrors) => ({ ...prevErrors, idType2File: 'Required' }));
+    //     //     setIsSubmitting(false);
+    //     //     return;
+    //     // }
 
-        const uploadedUrls = await Promise.all(
-            Object.entries(formData).map(async ([fieldName, file]) => {
-                if (file) {
-                    const formData = new FormData();
-                    formData.append('file', file);
-                    formData.append('upload_preset', 'lingam');
+    //     // const uploadedUrls = await Promise.all(
+    //     //     Object.entries(formData).map(async ([fieldName, file]) => {
+    //     //         if (file) {
+    //     //             const formData = new FormData();
+    //     //             formData.append('file', file);
+    //     //             formData.append('upload_preset', 'lingam');
 
-                    const response = await axios.post(
-                        `${CLOUDINARY_BASE_URL}${YOUR_CLOUDINARY_CLOUD_NAME}/image/upload`,
-                        formData
-                    );
+    //     //             const response = await axios.post(
+    //     //                 `${CLOUDINARY_BASE_URL}${YOUR_CLOUDINARY_CLOUD_NAME}/image/upload`,
+    //     //                 formData
+    //     //             );
 
-                    return response.data.secure_url; // Return the uploaded image URL
-                } else {
-                    return null; // If no file, return null
-                }
-            })
-        );
-        console.log(uploadedUrls);
-        const data = {
-            Id: Math.floor(Math.random() * 1000),
-            Name: formData.name,
-            Gender: formData.gender,
-            Age: formData.age,
-            FatherName: formData.fatherName,
-            MotherName: formData.motherName,
-            Occupation1: formData.occupation1,
-            Occupation2: formData.occupation2,
-            Qualification1: formData.qualification1,
-            Qualification2: formData.qualification2,
-            PhNumber1: formData.phNumber1,
-            PhNumber2: formData.phNumber2,
-            Address: formData.address,
-            City: formData.city,
-            PinCode: formData.pinCode,
-            StudentImg: formData.uploadedUrls[0],
-            IdType: formData.idType,
-            IdTypeFile: formData.uploadedUrls[1],
-            IdType2: formData.idType2,
-            IdType2File: formData.uploadedUrls[2],
-            Allergies: formData.allergies,
-            Disabilities: formData.disabilities,
-            Medical: formData.medical,
-            Dosage: formData.dosage,
-            FatherImg: formData.fatherImg ? uploadedUrls[3] : '',
-            MotherImg: formData.motherImg ? uploadedUrls[4].name : '',
+    //     //             return response.data.secure_url; // Return the uploaded image URL
+    //     //         } else {
+    //     //             return null; // If no file, return null
+    //     //         }
+    //     //     })
+    //     // );
+    //     // console.log(uploadedUrls);
+    //     const data = {
+    //         Id: Math.floor(Math.random() * 1000),
+    //         Name: formData.name,
+    //         Gender: formData.gender,
+    //         Age: formData.age,
+    //         FatherName: formData.fatherName,
+    //         MotherName: formData.motherName,
+    //         Occupation1: formData.occupation1,
+    //         Occupation2: formData.occupation2,
+    //         Qualification1: formData.qualification1,
+    //         Qualification2: formData.qualification2,
+    //         PhNumber1: formData.phNumber1,
+    //         PhNumber2: formData.phNumber2,
+    //         Address: formData.address,
+    //         City: formData.city,
+    //         PinCode: formData.pinCode,
+    //         // StudentImg: formDat.name,
+    //         IdType: formData.idType,
+    //         // IdTypeFile: formDat.name,
+    //         IdType2: formData.idType2,
+    //         // IdType2File: formDat.name,
+    //         Allergies: formData.allergies,
+    //         Disabilities: formData.disabilities,
+    //         Medical: formData.medical,
+    //         Dosage: formData.dosage,
+    //         // FatherImg: formData.fatherImg .name : '',
+    //         // MotherImg: formData.motherImg .nam.name : '',
 
-            "Created at": new Date()
-        };
+    //         "Created at": new Date()
+    //     };
 
-        fetch("https://sheet.best/api/sheets/4cd8701c-b5b2-4732-97b0-e3d6fc73bc45", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((r) => r.json())
-            .then((responseData) => {
-                console.log("Form data sent:", responseData);
-                setIsSubmitting(false);
-                setFormData(initialFormData); // Reset form fields after successful submission
-            })
-            .catch((error) => {
-                console.error("Error submitting form data:", error);
-                setIsSubmitting(false);
-            });
-    };
-    const message = encodeURIComponent('Your WhatsApp message here');
+    //     fetch("https://sheet.best/api/sheets/4cd8701c-b5b2-4732-97b0-e3d6fc73bc45", {
+    //         method: "POST",
+    //         mode: "cors",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then((r) => r.json())
+    //         .then((responseData) => {
+    //             console.log("Form data sent:", responseData);
+    //             setIsSubmitting(false);
+    //             setFormData(initialFormData); // Reset form fields after successful submission
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error submitting form data:", error);
+    //             setIsSubmitting(false);
+    //         });
+    // };
+    const phoneNumber = '7032792827'; // Replace with the phone number
+    const message = encodeURIComponent('I am interested in your car for sale');
 
     return (
         <div>
@@ -221,7 +223,7 @@ const RegistrationCorner = () => {
 
             <h1 className='text-2xl font-semibold py-4 text-center'>Registration Form</h1>
 
-            <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 md:gap-6 px-2 md:px-14'>
+            <form  className='grid grid-cols-1 md:grid-cols-2 md:gap-6 px-2 md:px-14'>
                 {/* student image */}
                 <div className='md:col-span-2'>
                     <label htmlFor="studentImg">Student's Image:</label>
@@ -582,7 +584,7 @@ const RegistrationCorner = () => {
                 {/* Clear button */}
                 <button type="button" onClick={handleClear} className='bg-gray-400 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>Clear</button>
                 {/* Submit button */}
-                <a href={`whatsapp://send?text=${message}`} data-action="share/whatsapp/share">
+                <a href={`https://wa.me/${phoneNumber}?text=${message}`} data-action="share/whatsapp/share">
                     <button type="submit" disabled={isSubmitting} className='bg-blue-600 my-4 mx-2 py-2 px-8 rounded-md font-semibold text-xl'>
                         Submit
                     </button>

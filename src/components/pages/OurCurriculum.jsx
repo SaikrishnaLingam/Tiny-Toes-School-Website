@@ -1,11 +1,11 @@
 import React from 'react'
-import KnowledgeCorner from '../KnowldegeCorner'
+import EducateChildren from '../EducateChildren/EducateChildren';
 import withScrollAnimation from '../withScrollAnimation';
 
 const OurCurriculum = () => {
     return (
         <div>
-            <KnowledgeCorner />
+            <EducateChildren />
         </div>
     )
 }
