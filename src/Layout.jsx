@@ -9,7 +9,7 @@ import EducateChildren from "./components/EducateChildren/EducateChildren.jsx";
 import ImageFlip from "./components/ImageFlip.jsx";
 import HomeSlider from "./components/HomeSlider.jsx";
 import HoverComponent from './components/HoverCard/HoverComponent.jsx';
-import HomeBanners from './components/HomeBanners.jsx';
+// import HomeBanners from './components/HomeBanners.jsx';
 
 const Layout = () => {
     return (

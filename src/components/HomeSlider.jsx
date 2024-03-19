@@ -35,7 +35,7 @@
 // export default withScrollAnimation(HomeSlider)
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import banner1 from '../assests/banners/1.png';
 import banner2 from '../assests/banners/2.png';
@@ -53,13 +53,13 @@ const HomeBanners = () => {
         banner3
     ];
 
-    const handleNextBanner = () => {
+    const handleNextBanner = useCallback(() => {
         setCounter(prevCounter => (prevCounter === bannerImages.length - 1 ? 0 : prevCounter + 1));
-    };
+    }, [bannerImages.length]);
 
-    const handlePrevBanner = () => {
-        setCounter(prevCounter => (prevCounter === 0 ? bannerImages.length - 1 : prevCounter - 1));
-    };
+    // const handlePrevBanner = () => {
+    //     setCounter(prevCounter => (prevCounter === 0 ? bannerImages.length - 1 : prevCounter - 1));
+    // };
 
     useEffect(() => {
         let intervalId;
@@ -69,11 +69,11 @@ const HomeBanners = () => {
             }, 3000);
         }
         return () => clearInterval(intervalId);
-    }, [autoSlide]);
+    }, [autoSlide, handleNextBanner]);
 
-    const handleDotClick = index => {
-        setCounter(index);
-    };
+    // const handleDotClick = index => {
+    //     setCounter(index);
+    // };
 
     return (
         <section className="w-full h-full">

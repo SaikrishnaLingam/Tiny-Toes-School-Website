@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex items-center justify-center'>
-                <img src={smiley} alt="Footer Pic" className='hidden md:block md:px-28 p-2 lg:w-[80%]' />
+                <img src={smiley} alt="Footer Pic" className=' md:px-28 p-2 lg:w-[80%]' />
             </div>
         </div>
     );

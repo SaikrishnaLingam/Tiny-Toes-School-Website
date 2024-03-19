@@ -10,12 +10,14 @@ const CardComponent = ({ pic, cardColor, title, content, age, seats, index }) =>
                 <img src={pic} alt={title} />
             </div>
             <div className='font-bold text-2xl p-2 md:p-4'>{title}</div>
-            <div className='px-2 lg:px-10 text-center overflow-hidden h-20'>{content}</div>
-            <div className='h-8'>{age}</div>
-            <div className='h-8'>{seats}</div>
+            <div className='px-2 lg:px-10 text-center'>{content}</div>
+            <div className='flex flex-col text-center justify-between w-full'>
+                <div className='h-8'>{age}</div>
+                <div className='h-8'>{seats}</div>
+            </div>
             {
-                index % 2 === 0 
-                    ? <div className="self-end"><Link to="/registration-corner"><RegisterButton id={0} /></Link></div> 
+                index % 2 === 0
+                    ? <div className="self-end"><Link to="/registration-corner"><RegisterButton id={0} /></Link></div>
                     : <div className="self-start"><Link to="/registration-corner"><RegisterButton id={1} /></Link></div>
             }
         </div>

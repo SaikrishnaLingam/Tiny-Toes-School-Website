@@ -24,7 +24,7 @@ export const kidData = [
         pic: class3,
         cardColor: 'bg-sky-400',
         title: 'PP1',
-        content: 'Pre-Primary 1 introduces the child to a formal learning environment. This program prepares children for the next level of Social emotional development and academic, social and physical skills.',
+        content: 'Pre-Primary 1 introduces the child to a formal learning environment preparing them for the next level of development.',
         age: 'AGE: 4 to 5 years',
         seats: '25 Seats'
     },
@@ -32,7 +32,7 @@ export const kidData = [
         pic: class4,
         cardColor: 'bg-pink-300',
         title: 'PP2',
-        content: 'Pre-Primary 2 program prepares your child for the formal schooling that comes next.Desgined for 5 to 6 years old, this program prepares Children for formal schooling.',
+        content: 'Pre-Primary 2 prepares your child for the formal schooling that comes next. Desgined for 5 to 6 years old, this program prepares Children for formal schooling.',
         age: 'AGE: 5 to 6 years',
         seats: '25 Seats'
     }
